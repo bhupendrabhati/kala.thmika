@@ -133,209 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 8. DYNAMIC PROJECTS GRID (Residential, Commercial, Hospitality)
-    // Images loaded from assets/images/project-images/ folder
-    // Naming: RP = Residential, CP = Commercial, HP = Hospitality
-    // ==========================================
-    const projectsData = [
-        // Residential
-        { title: "Residential Project 01", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0101.jpg", tall: false, year: "2025", area: "3,200 sq ft", desc: "A beautifully designed residential space blending modern aesthetics with comfortable living." },
-        { title: "Residential Project 02", category: "residential", location: "Jaipur, Rajasthan", image: "assets/images/project-images/RP0102.jpg", tall: false, year: "2025", area: "2,800 sq ft", desc: "Contemporary home design with open-plan living and natural light." },
-        { title: "Residential Project 03", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0103.jpg", tall: false, year: "2024", area: "3,500 sq ft", desc: "Elegant residence featuring clean lines and warm material palette." },
-        { title: "Residential Project 04", category: "residential", location: "Udaipur, Rajasthan", image: "assets/images/project-images/RP0104.jpg", tall: false, year: "2024", area: "4,100 sq ft", desc: "Luxurious family home with spacious interiors and modern amenities." },
-        { title: "Residential Project 05", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0105.jpg", tall: true, year: "2025", area: "5,200 sq ft", desc: "Premium villa design with landscaped gardens and smart home features." },
-        { title: "Residential Project 06", category: "residential", location: "Jaipur, Rajasthan", image: "assets/images/project-images/RP0106.jpg", tall: false, year: "2024", area: "2,600 sq ft", desc: "Compact yet luxurious apartment with efficient space utilization." },
-        { title: "Residential Project 07", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0107.jpg", tall: false, year: "2025", area: "3,800 sq ft", desc: "Modern duplex house with double-height living spaces." },
-        { title: "Residential Project 08", category: "residential", location: "Kota, Rajasthan", image: "assets/images/project-images/RP0108.jpg", tall: false, year: "2024", area: "2,900 sq ft", desc: "Thoughtfully designed home with seamless indoor-outdoor connection." },
-        { title: "Residential Project 09", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0201.jpg", tall: false, year: "2025", area: "3,400 sq ft", desc: "Stylish residence with custom woodwork and ambient lighting." },
-        { title: "Residential Project 10", category: "residential", location: "Jaipur, Rajasthan", image: "assets/images/project-images/RP0202.jpg", tall: false, year: "2024", area: "4,500 sq ft", desc: "Grand family home blending tradition with contemporary design." },
-        { title: "Residential Project 11", category: "residential", location: "Udaipur, Rajasthan", image: "assets/images/project-images/RP0203.jpg", tall: false, year: "2025", area: "3,100 sq ft", desc: "Minimalist home with maximum functionality and clean aesthetics." },
-        { title: "Residential Project 12", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0204.jpg", tall: false, year: "2024", area: "5,800 sq ft", desc: "Sprawling residence with private courtyard and water features." },
-        { title: "Residential Project 13", category: "residential", location: "Jaipur, Rajasthan", image: "assets/images/project-images/RP0205.jpg", tall: true, year: "2025", area: "6,200 sq ft", desc: "Luxury penthouse with panoramic views and premium finishes." },
-        { title: "Residential Project 14", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0206.jpg", tall: false, year: "2024", area: "2,700 sq ft", desc: "Cozy yet modern home perfect for young families." },
-        { title: "Residential Project 15", category: "residential", location: "Kota, Rajasthan", image: "assets/images/project-images/RP0207.jpg", tall: false, year: "2025", area: "3,600 sq ft", desc: "Nature-inspired residence with organic materials and green spaces." },
-        { title: "Residential Project 16", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0208.jpg", tall: false, year: "2024", area: "4,000 sq ft", desc: "Contemporary villa with infinity pool and outdoor lounge." },
-        { title: "Residential Project 17", category: "residential", location: "Jaipur, Rajasthan", image: "assets/images/project-images/RP0209.jpg", tall: false, year: "2025", area: "3,300 sq ft", desc: "Art Deco inspired home with bold geometric patterns." },
-        { title: "Residential Project 18", category: "residential", location: "Udaipur, Rajasthan", image: "assets/images/project-images/RP0210.jpg", tall: false, year: "2024", area: "4,800 sq ft", desc: "Lake-facing residence with expansive glass facades." },
-        { title: "Residential Project 19", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0211.jpg", tall: false, year: "2025", area: "2,500 sq ft", desc: "Smart home with integrated automation and energy efficiency." },
-        { title: "Residential Project 20", category: "residential", location: "Jaipur, Rajasthan", image: "assets/images/project-images/RP0212.jpg", tall: false, year: "2024", area: "3,900 sq ft", desc: "Heritage-inspired home with modern comfort and style." },
-        { title: "Residential Project 21", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0213.jpg", tall: false, year: "2025", area: "5,500 sq ft", desc: "Multi-generational home with separate living zones." },
-        { title: "Residential Project 22", category: "residential", location: "Kota, Rajasthan", image: "assets/images/project-images/RP0214.jpg", tall: false, year: "2024", area: "3,000 sq ft", desc: "Vibrant home with colorful interiors and playful design elements." },
-        { title: "Residential Project 23", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0215.jpg", tall: false, year: "2025", area: "4,200 sq ft", desc: "Zen-inspired residence with meditation spaces and gardens." },
-        { title: "Residential Project 24", category: "residential", location: "Jaipur, Rajasthan", image: "assets/images/project-images/RP0216.jpg", tall: false, year: "2024", area: "3,700 sq ft", desc: "Industrial-chic home with exposed brick and metal accents." },
-        { title: "Residential Project 25", category: "residential", location: "Udaipur, Rajasthan", image: "assets/images/project-images/RP0217.jpg", tall: false, year: "2025", area: "6,000 sq ft", desc: "Majestic estate with traditional Rajasthani architectural elements." },
-        { title: "Residential Project 26", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0218.jpg", tall: false, year: "2024", area: "2,400 sq ft", desc: "Compact luxury apartment with rooftop terrace." },
-        { title: "Residential Project 27", category: "residential", location: "Jaipur, Rajasthan", image: "assets/images/project-images/RP0219.jpg", tall: false, year: "2025", area: "4,600 sq ft", desc: "Eco-friendly home with solar panels and rainwater harvesting." },
-        { title: "Residential Project 28", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/Rp0220.jpg", tall: false, year: "2024", area: "3,500 sq ft", desc: "Sleek modern home with smart lighting and climate control." },
-        { title: "Residential Project 29", category: "residential", location: "Kota, Rajasthan", image: "assets/images/project-images/RP0501.jpg", tall: false, year: "2025", area: "4,300 sq ft", desc: "Villa with seamless indoor-outdoor living and pool area." },
-        { title: "Residential Project 30", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0502.jpg", tall: false, year: "2024", area: "3,200 sq ft", desc: "Warm and inviting home with natural wood finishes." },
-        { title: "Residential Project 31", category: "residential", location: "Jaipur, Rajasthan", image: "assets/images/project-images/RP0503.jpg", tall: false, year: "2025", area: "5,100 sq ft", desc: "Grand entrance and spacious living areas define this residence." },
-        { title: "Residential Project 32", category: "residential", location: "Udaipur, Rajasthan", image: "assets/images/project-images/RP0504.jpg", tall: false, year: "2024", area: "2,800 sq ft", desc: "Minimalist retreat with panoramic mountain views." },
-        { title: "Residential Project 33", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0505.jpg", tall: false, year: "2025", area: "3,600 sq ft", desc: "Contemporary home with cantilevered balconies." },
-        { title: "Residential Project 34", category: "residential", location: "Jaipur, Rajasthan", image: "assets/images/project-images/RP0506.jpg", tall: false, year: "2024", area: "4,400 sq ft", desc: "Luxurious master suite and designer kitchen." },
-        { title: "Residential Project 35", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0507.jpg", tall: false, year: "2025", area: "3,100 sq ft", desc: "Charming home with handcrafted details and warm tones." },
-        { title: "Residential Project 36", category: "residential", location: "Kota, Rajasthan", image: "assets/images/project-images/RP0508.jpg", tall: false, year: "2024", area: "5,700 sq ft", desc: "Estate property with sprawling lawns and guest house." },
-        { title: "Residential Project 37", category: "residential", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/RP0509.jpg", tall: false, year: "2025", area: "2,600 sq ft", desc: "Urban apartment with skyline views and modern finishes." },
-        { title: "Residential Project 38", category: "residential", location: "Jaipur, Rajasthan", image: "assets/images/project-images/RP0510.jpg", tall: false, year: "2024", area: "4,000 sq ft", desc: "Family-friendly home with play areas and study rooms." },
-        { title: "Residential Project 39", category: "residential", location: "Udaipur, Rajasthan", image: "assets/images/project-images/RP0511.jpg", tall: false, year: "2025", area: "3,800 sq ft", desc: "Heritage restoration with modern interior upgrades." },
-
-        // Commercial
-        { title: "Commercial Project 01", category: "commercial", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/CP0101.jpg", tall: false, year: "2024", area: "8,000 sq ft", desc: "Modern office space designed for productivity and collaboration." },
-        { title: "Commercial Project 02", category: "commercial", location: "Jaipur, Rajasthan", image: "assets/images/project-images/CP0102.jpg", tall: false, year: "2025", area: "12,000 sq ft", desc: "Corporate headquarters with open-plan workspace and meeting rooms." },
-        { title: "Commercial Project 03", category: "commercial", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/CP0103.jpg", tall: false, year: "2024", area: "6,500 sq ft", desc: "Retail showroom with innovative display systems." },
-        { title: "Commercial Project 04", category: "commercial", location: "Jaipur, Rajasthan", image: "assets/images/project-images/CP0104.jpg", tall: false, year: "2025", area: "15,000 sq ft", desc: "Tech park office with smart infrastructure and green design." },
-        { title: "Commercial Project 05", category: "commercial", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/CP0201.jpg", tall: false, year: "2024", area: "9,500 sq ft", desc: "Co-working space with flexible layouts and modern amenities." },
-        { title: "Commercial Project 06", category: "commercial", location: "Jaipur, Rajasthan", image: "assets/images/project-images/CP0202.jpg", tall: false, year: "2025", area: "7,200 sq ft", desc: "Boutique office with premium finishes and brand identity." },
-        { title: "Commercial Project 07", category: "commercial", location: "Udaipur, Rajasthan", image: "assets/images/project-images/CP0203.jpg", tall: false, year: "2024", area: "11,000 sq ft", desc: "Multi-floor commercial complex with retail and office spaces." },
-        { title: "Commercial Project 08", category: "commercial", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/CP0204.jpg", tall: false, year: "2025", area: "5,800 sq ft", desc: "Showroom with dramatic lighting and product display zones." },
-        { title: "Commercial Project 09", category: "commercial", location: "Jaipur, Rajasthan", image: "assets/images/project-images/CP0205.jpg", tall: false, year: "2024", area: "18,000 sq ft", desc: "Corporate campus with landscaped courtyards and wellness areas." },
-        { title: "Commercial Project 10", category: "commercial", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/CP0206.jpg", tall: false, year: "2025", area: "10,000 sq ft", desc: "Innovation hub with creative workspaces and breakout zones." },
-
-        // Hospitality
-        { title: "Hospitality Project 01", category: "hospitality", location: "Jaipur, Rajasthan", image: "assets/images/project-images/HP0101.jpg", tall: false, year: "2024", area: "3,500 sq ft", desc: "Boutique cafe with warm ambiance and cozy seating." },
-        { title: "Hospitality Project 02", category: "hospitality", location: "Udaipur, Rajasthan", image: "assets/images/project-images/HP0102.jpg", tall: false, year: "2025", area: "5,200 sq ft", desc: "Fine dining restaurant with elegant interiors and ambient lighting." },
-        { title: "Hospitality Project 03", category: "hospitality", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/HP0103.jpg", tall: false, year: "2024", area: "8,000 sq ft", desc: "Heritage hotel lobby with traditional Rajasthani elements." },
-        { title: "Hospitality Project 04", category: "hospitality", location: "Jaipur, Rajasthan", image: "assets/images/project-images/HP0104.jpg", tall: false, year: "2025", area: "4,000 sq ft", desc: "Rooftop bar with panoramic city views and stylish lounge." },
-        { title: "Hospitality Project 05", category: "hospitality", location: "Udaipur, Rajasthan", image: "assets/images/project-images/HP0105.jpg", tall: false, year: "2024", area: "6,500 sq ft", desc: "Resort spa with natural materials and serene design." },
-        { title: "Hospitality Project 06", category: "hospitality", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/HP0106.jpg", tall: false, year: "2025", area: "2,800 sq ft", desc: "Artisan bakery with rustic charm and display counters." },
-        { title: "Hospitality Project 07", category: "hospitality", location: "Jaipur, Rajasthan", image: "assets/images/project-images/HP0107.jpg", tall: false, year: "2024", area: "7,300 sq ft", desc: "Multi-cuisine restaurant with open kitchen concept." },
-        { title: "Hospitality Project 08", category: "hospitality", location: "Udaipur, Rajasthan", image: "assets/images/project-images/HP0108.jpg", tall: false, year: "2025", area: "4,500 sq ft", desc: "Boutique hotel suite with luxury furnishings." },
-        { title: "Hospitality Project 09", category: "hospitality", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/HP0109.jpg", tall: false, year: "2024", area: "3,200 sq ft", desc: "Cocktail bar with mood lighting and designer furniture." },
-        { title: "Hospitality Project 10", category: "hospitality", location: "Jaipur, Rajasthan", image: "assets/images/project-images/Hp0110.jpg", tall: false, year: "2025", area: "5,800 sq ft", desc: "Resort restaurant with outdoor seating and garden views." },
-        { title: "Hospitality Project 11", category: "hospitality", location: "Udaipur, Rajasthan", image: "assets/images/project-images/HP0112.jpg", tall: false, year: "2024", area: "9,000 sq ft", desc: "Grand hotel ballroom with crystal chandeliers and marble floors." },
-        { title: "Hospitality Project 12", category: "hospitality", location: "Bhilwara, Rajasthan", image: "assets/images/project-images/HP0113.jpg", tall: false, year: "2025", area: "2,500 sq ft", desc: "Intimate dining space with private alcoves and candlelight." },
-        { title: "Hospitality Project 13", category: "hospitality", location: "Jaipur, Rajasthan", image: "assets/images/project-images/HP0114.jpg", tall: false, year: "2024", area: "6,000 sq ft", desc: "Trendy lounge with DJ booth andVIP sections." },
-        { title: "Hospitality Project 14", category: "hospitality", location: "Udaipur, Rajasthan", image: "assets/images/project-images/HP0115.jpg", tall: false, year: "2025", area: "4,200 sq ft", desc: "Poolside cafe with tropical decor and relaxed vibe." }
-    ];
-
-    const projectsGrid = document.getElementById('projectsGrid');
-    let currentFilter = 'all';
-
-    function renderProjects(filter) {
-        projectsGrid.innerHTML = '';
-        const filtered = filter === 'all'
-            ? projectsData
-            : projectsData.filter(p => p.category === filter);
-
-        filtered.forEach((project, index) => {
-            const card = document.createElement('div');
-            card.className = `project-card glass-card animate-on-scroll ${project.tall ? 'tall' : ''}`;
-            card.style.animationDelay = `${(index % 4) * 0.1}s`;
-            card.dataset.category = project.category;
-            card.innerHTML = `
-                <img src="${project.image}" alt="${project.title} - ${project.category} project by KALATHMIKA" class="project-image" loading="lazy">
-                <div class="project-overlay">
-                    <span class="project-category">${project.category}</span>
-                    <h3 class="project-title">${project.title}</h3>
-                    <span class="project-location">📍 ${project.location}</span>
-                </div>
-            `;
-
-            // 3D Tilt Effect
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = ((y - centerY) / centerY) * -5;
-                const rotateY = ((x - centerX) / centerX) * 5;
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-            });
-
-            // Lightbox Trigger
-            card.addEventListener('click', () => openLightbox(project));
-
-            projectsGrid.appendChild(card);
-            observer.observe(card);
-        });
-    }
-
-    renderProjects('all');
-
-    // ==========================================
-    // 9. PROJECT CATEGORY FILTERS
-    // ==========================================
-    const filterButtons = document.querySelectorAll('.filter-btn');
-
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const filter = btn.dataset.filter;
-            if (filter === currentFilter) return;
-
-            currentFilter = filter;
-
-            // Update active button
-            filterButtons.forEach(b => {
-                b.classList.remove('active');
-                b.setAttribute('aria-selected', 'false');
-            });
-            btn.classList.add('active');
-            btn.setAttribute('aria-selected', 'true');
-
-            // Re-render projects with filter
-            renderProjects(filter);
-        });
-    });
-
-    // ==========================================
-    // 9b. PROJECT IMAGES SHOW / HIDE TOGGLE
-    // ==========================================
-    const toggleImagesBtn = document.getElementById('toggleImages');
-    const toggleImagesLabel = document.getElementById('toggleImagesLabel');
-    let imagesHidden = false;
-
-    function applyImageToggle() {
-        projectsGrid.classList.toggle('hide-images', imagesHidden);
-        toggleImagesBtn.setAttribute('aria-pressed', imagesHidden ? 'true' : 'false');
-        toggleImagesLabel.textContent = imagesHidden ? 'Show Images' : 'Hide Images';
-    }
-
-    toggleImagesBtn.addEventListener('click', () => {
-        imagesHidden = !imagesHidden;
-        applyImageToggle();
-    });
-
-    // ==========================================
-    // 10. LIGHTBOX FUNCTIONALITY
-    // ==========================================
-    const lightbox = document.getElementById('lightbox');
-    const lightboxClose = document.getElementById('lightboxClose');
-
-    function openLightbox(project) {
-        document.getElementById('lightboxImage').src = project.image;
-        document.getElementById('lightboxImage').alt = `${project.title} - Project Detail`;
-        document.getElementById('lightboxTitle').textContent = project.title;
-        document.getElementById('lightboxCategory').textContent = project.category;
-        document.getElementById('lightboxLocation').textContent = `📍 ${project.location}`;
-        document.getElementById('lightboxDescription').textContent = project.desc;
-        document.getElementById('lightboxYear').textContent = project.year;
-        document.getElementById('lightboxArea').textContent = project.area;
-
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        lightboxClose.focus();
-    }
-
-    function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeLightbox();
-    });
-
-    // ==========================================
-    // 11. TESTIMONIAL CAROUSEL (Google Review Screenshots)
+    // 8. TESTIMONIAL CAROUSEL (Google Review Screenshots)
     // Place your screenshots in assets/testimonials/ and update the paths below.
     // ==========================================
     const testimonials = [
@@ -401,27 +199,49 @@ document.addEventListener('DOMContentLoaded', () => {
     startTestimonialAutoSlide();
 
     // ==========================================
-    // 12. HORIZONTAL SHOWCASE SLIDER
+    // 9. HORIZONTAL SHOWCASE SLIDER
     // ==========================================
     const showcaseTrack = document.getElementById('showcaseTrack');
-    const showcaseImages = [
-        "assets/images/project-images/RP0101.jpg",
-        "assets/images/project-images/CP0101.jpg",
-        "assets/images/project-images/HP0101.jpg",
-        "assets/images/project-images/RP0201.jpg",
-        "assets/images/project-images/CP0201.jpg",
-        "assets/images/project-images/HP0105.jpg"
-    ];
 
-    [...showcaseImages, ...showcaseImages].forEach((src, i) => {
+    // Slides come from the generated project manifest (assets/js/project-manifest.js)
+    // so this carousel can only ever reference images that really exist on disk.
+    // One representative photo per project keeps every project represented.
+    const showcaseImages = [];
+    const showcaseManifest = window.KALATHMIKA_PROJECTS;
+    const featured = window.KALATHMIKA_FEATURED_PROJECTS;
+    const describe = (folder) =>
+        (featured && typeof featured.formatProjectName === 'function'
+            ? featured.formatProjectName(folder)
+            : folder) || folder;
+
+    if (showcaseManifest && Array.isArray(showcaseManifest.categories)) {
+        showcaseManifest.categories.forEach((category) => {
+            (category.projects || []).forEach((project) => {
+                const images = project.images || [];
+                if (images.length) showcaseImages.push({ src: images[0], name: describe(project.folder) });
+            });
+        });
+    }
+
+    [...showcaseImages, ...showcaseImages].forEach((item, i) => {
         const div = document.createElement('div');
         div.className = 'showcase-item';
-        div.innerHTML = `<img src="${src}" alt="Showcase project ${i + 1} by KALATHMIKA" loading="lazy">`;
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.alt = `${item.name} by KALATHMIKA`;
+        img.loading = 'lazy';
+        div.appendChild(img);
         showcaseTrack.appendChild(div);
     });
 
+    // If the manifest is unavailable, hide the track rather than show broken slides.
+    if (!showcaseImages.length && showcaseTrack) {
+        const slider = showcaseTrack.closest('.showcase-slider');
+        if (slider) slider.hidden = true;
+    }
+
     // ==========================================
-    // 12. CONTACT FORM VALIDATION
+    // 9. CONTACT FORM VALIDATION
     // ==========================================
     const contactForm = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
@@ -598,7 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // 13. BACK TO TOP BUTTON
+    // 10. BACK TO TOP BUTTON
     // ==========================================
     const backToTop = document.getElementById('backToTop');
 
@@ -607,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // 14. VERTICAL SCROLL HANDLING
+    // 11. VERTICAL SCROLL HANDLING
     // (scroll progress, navbar state, active nav link, back-to-top)
     // ==========================================
     const sectionIds = ['hero', 'about', 'awards', 'projects', 'services', 'showcase', 'offices', 'testimonials', 'contact'];
@@ -657,7 +477,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateNavActive();
 
     // ==========================================
-    // 15. KEYBOARD NAVIGATION SUPPORT
+    // 12. KEYBOARD NAVIGATION SUPPORT
     // ==========================================
     document.addEventListener('keydown', (e) => {
         // Close mobile menu on Escape
